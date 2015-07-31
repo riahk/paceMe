@@ -1,0 +1,28 @@
+<ion-view>
+<ion-content>
+<div>
+  <h2>{{minutes}} minutes</h2>
+  <div class="button" ng-click="addMinutes()">Up</div>
+        <div class="button" ng-click="removeMinutes()">Down</div>
+
+        <h2>{{seconds}} seconds</h2>
+        <div class="button" ng-click="addSeconds()">Up</div>
+        <div class="button" ng-click="removeSeconds()">Down</div>
+      </div>
+
+      <h2>Add Checkpoints: </h2>
+      <ion-list ng-repeat="checkpoint in timer.checkpoints">
+        <ion-item>Checkpoint at {{checkpoint}}</ion-item>
+      </ion-list>
+      
+      <label class="item item-input">
+        <span class="input-label">Time (sec)</span>
+        <input ng-model="cp" type="number">
+      </label>
+      <div class="button" ng-click="setCheckpoint(cp); cp=''">Add Checkpoint</div>
+
+      <br>
+      <div class="button" ng-click="saveTimer()">Save</div>
+
+</ion-content>
+</ion-view>

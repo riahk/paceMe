@@ -1,0 +1,8 @@
+<ion-view>
+<ion-content class="has-header">
+<ion-list ng-repeat="timer in timers">
+<ion-item ng-click="loadTimer(timer)">{{timer.minutes}} minutes {{timer.seconds}} seconds</ion-item>
+</ion-list>
+<div class="button" ng-click="clearTimers()">Clear Timers</div>
+</ion-content>
+</ion-view>
