@@ -3,8 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('paceme', ['ionic', 'paceme.timer', 'timer',
-'paceme.timerfact', 'paceme.newTimer', 'paceme.loadTimer'])
+angular.module('paceme', ['ionic', 'btford.socket-io', 'paceme.timer', 'timer',
+'paceme.timerfact', 'paceme.newTimer', 'paceme.loadTimer',
+'paceme.grouptimer'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -39,5 +40,11 @@ angular.module('paceme', ['ionic', 'paceme.timer', 'timer',
     url: '/load',
     templateUrl: 'LoadTimerView.html',
     controller: 'LoadTimerCtrl'
+  })
+
+  $stateProvider.state('grouptimer', {
+    url: '/grouptimer',
+    templateUrl: 'GroupTimerView.html',
+    controller: 'GroupTimerCtrl'
   })
 });
