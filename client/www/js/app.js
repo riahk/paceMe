@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('paceme', ['ionic', 'btford.socket-io', 'paceme.timer', 'timer',
 'paceme.timerfact', 'paceme.newTimer', 'paceme.loadTimer',
-'paceme.grouptimer'])
+'paceme.grouptimer', 'paceme.socketfact'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,7 +30,6 @@ angular.module('paceme', ['ionic', 'btford.socket-io', 'paceme.timer', 'timer',
 
   $stateProvider.state('timer', {
     url: '/',
-    cache: false,
     templateUrl: 'timerView.html',
     controller: 'TimerCtrl'
   })

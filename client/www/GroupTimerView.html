@@ -1,5 +1,15 @@
 <ion-view>
 <ion-content>
 <h1>Group Timer</h1>
+<div ng-show="connected">
+  <p>You're connected!</p>
+</div>
+<p>Select a timer to invite others to: </p>
+<p>(Or create a timer)</p>
+<ion-list ng-repeat="timer in timers">
+<ion-item ng-click="">{{timer.minutes}} minutes {{timer.seconds}} seconds</ion-item>
+</ion-list>
+
+
 </ion-content>
 </ion-view>
