@@ -7,6 +7,16 @@ angular.module('paceme.timerfact', [])
       this.timer = timer;
     },
 
-    firstLoad: true 
+    firstLoad: true,
+
+    running: false,
+
+    startTimer: function() {
+      this.running = true;
+    },
+
+    pauseTimer: function() {
+      this.running = false;
+    }
   };
 });

@@ -13,12 +13,14 @@ angular.module('paceme.timer', [])
     $scope.$broadcast('timer-stop');
     $scope.timerRunning = false;
     $scope.buttonDisplay = 'play';
+    Timer.pauseTimer();
   };
 
   $scope.startClock = function() {
     $scope.$broadcast('timer-start');
     $scope.timerRunning = true;
     $scope.buttonDisplay = 'pause';
+    Timer.startTimer();
   }
 
   $scope.playPause = function() {
