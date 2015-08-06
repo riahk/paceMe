@@ -1,10 +1,11 @@
 angular.module('paceme.loadTimer', [])
-.controller('LoadTimerCtrl', function($scope, Timer, $location) {
+.controller('LoadTimerCtrl', function($scope, Timer, $location, $cordovaToast) {
 
   $scope.timers = JSON.parse(window.localStorage['timers']);
   //when a timer is clicked, load it and redirect to the timer view
   $scope.loadTimer = function (timer) {
     if(Timer.running) {
+      $cordovaToast.show("Timer Already Running!", 'short', 'center'); 
       console.log("there's already a timer running!");
     } else {
       Timer.setTimer(timer);

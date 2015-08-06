@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('paceme', ['ionic', 'btford.socket-io', 'paceme.timer', 'timer',
 'paceme.timerfact', 'paceme.newTimer', 'paceme.loadTimer',
-'paceme.grouptimer', 'paceme.socketfact'])
+'paceme.grouptimer', 'paceme.socketfact', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
