@@ -1,0 +1,26 @@
+{
+  "name": "paceme",
+  "version": "1.0.0",
+  "description": "socket.io server for paceme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riahk/paceMe.git"
+  },
+  "keywords": [
+    "timer"
+  ],
+  "author": "riahk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riahk/paceMe/issues"
+  },
+  "homepage": "https://github.com/riahk/paceMe#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "socket.io": "^1.3.6"
+  }
+}
