@@ -1,8 +1,16 @@
 angular.module('paceme.timer', [])
 .controller('TimerCtrl', function($scope, Timer) {
-  $scope.timer = Timer.timer;
+   $scope.firstLoad = Timer.firstLoad;
+
+  //auto-load the first timer, if there is one in storage
+  if($scope.firstLoad && window.localStorage.hasOwnProperty('timers') && JSON.parse(window.localStorage['timers']).length > 0) {
+    Timer.setTimer(JSON.parse(window.localStorage['timers'])[0]);
+    Timer.firstLoad = false;
+  }
+
+  $scope.ourtimer = Timer.timer;
   $scope.timerRunning = false;
-  $scope.time = Timer.timer.time;
+  $scope.ourtime = Timer.time;
 
   $scope.buttonDisplay = 'play';
 
@@ -76,11 +84,4 @@ angular.module('paceme.timer', [])
    }
   });
 
-  $scope.firstLoad = Timer.firstLoad;
-
-  //auto-load the first timer, if there is one in storage
-  if($scope.firstLoad && window.localStorage.hasOwnProperty('timers') && JSON.parse(window.localStorage['timers']).length > 0) {
-    Timer.setTimer(JSON.parse(window.localStorage['timers'])[0]);
-    Timer.firstLoad = false;
-  }
 });

@@ -1,15 +1,27 @@
 <ion-view>
 <ion-content>
 <h1>Group Timer</h1>
-<div ng-show="connected">
-  <p>You're connected!</p>
-</div>
+<div ng-show="!joined">
 <p>Select a timer to invite others to: </p>
 <p>(Or create a timer)</p>
 <ion-list ng-repeat="timer in timers">
-<ion-item ng-click="">{{timer.minutes}} minutes {{timer.seconds}} seconds</ion-item>
+<ion-item ng-click="selectTimer(timer)">{{timer.minutes}} minutes {{timer.seconds}} seconds</ion-item>
+
 </ion-list>
 
+<h2>Or enter the channel ID:</h2>
+<label class="item item-input">
+  <span class="input-label">ID</span>
+  <input ng-model="channelID">
+</label>
+<div class="button" ng-click="joinTimer(channelID)">Submit</div>
+</div>
+
+<div ng-show="joined">
+  <h4>your invite code is: {{invite}}</h4>
+  <timer countdown="time" interval="1000" autostart="false"><h1>{{minutes}} minute{{minutesS}} {{seconds}} second{{secondsS}}</h1></timer>
+  <div class="button" ng-click="playPause()">Play</div>
+</div>
 
 </ion-content>
 </ion-view>

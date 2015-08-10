@@ -5,7 +5,9 @@ angular.module('paceme.loadTimer', [])
   //when a timer is clicked, load it and redirect to the timer view
   $scope.loadTimer = function (timer) {
     if(Timer.running) {
-      $cordovaToast.show("Timer Already Running!", 'short', 'center'); 
+      if(ionic.Platform.isAndroid()) {
+        $cordovaToast.show("Timer Already Running!", 'short', 'center'); 
+      }
       console.log("there's already a timer running!");
     } else {
       Timer.setTimer(timer);
